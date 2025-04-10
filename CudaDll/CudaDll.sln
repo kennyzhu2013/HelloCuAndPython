@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.35731.53
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CudaDll", "CudaDll.vcxproj", "{E8545935-578F-4FE6-BB38-C55956157DD2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cudaWrap", "..\cudaWrap\cudaWrap.vcxproj", "{C8ACED9A-ECB6-453F-A370-5DD9A54696B1}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PythonApp", "..\PythonApp\PythonApp.pyproj", "{5CE2A7AC-EE3E-4DBC-9E9E-5ABEE50035F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E8545935-578F-4FE6-BB38-C55956157DD2}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{E8545935-578F-4FE6-BB38-C55956157DD2}.Debug|x64.ActiveCfg = Debug|x64
+		{E8545935-578F-4FE6-BB38-C55956157DD2}.Debug|x64.Build.0 = Debug|x64
+		{E8545935-578F-4FE6-BB38-C55956157DD2}.Debug|x86.ActiveCfg = Debug|x64
+		{E8545935-578F-4FE6-BB38-C55956157DD2}.Release|Any CPU.ActiveCfg = Release|x64
+		{E8545935-578F-4FE6-BB38-C55956157DD2}.Release|x64.ActiveCfg = Release|x64
+		{E8545935-578F-4FE6-BB38-C55956157DD2}.Release|x64.Build.0 = Release|x64
+		{E8545935-578F-4FE6-BB38-C55956157DD2}.Release|x86.ActiveCfg = Release|x64
+		{C8ACED9A-ECB6-453F-A370-5DD9A54696B1}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{C8ACED9A-ECB6-453F-A370-5DD9A54696B1}.Debug|x64.ActiveCfg = Debug|x64
+		{C8ACED9A-ECB6-453F-A370-5DD9A54696B1}.Debug|x64.Build.0 = Debug|x64
+		{C8ACED9A-ECB6-453F-A370-5DD9A54696B1}.Debug|x86.ActiveCfg = Debug|Win32
+		{C8ACED9A-ECB6-453F-A370-5DD9A54696B1}.Debug|x86.Build.0 = Debug|Win32
+		{C8ACED9A-ECB6-453F-A370-5DD9A54696B1}.Release|Any CPU.ActiveCfg = Release|Win32
+		{C8ACED9A-ECB6-453F-A370-5DD9A54696B1}.Release|x64.ActiveCfg = Release|x64
+		{C8ACED9A-ECB6-453F-A370-5DD9A54696B1}.Release|x64.Build.0 = Release|x64
+		{C8ACED9A-ECB6-453F-A370-5DD9A54696B1}.Release|x86.ActiveCfg = Release|Win32
+		{C8ACED9A-ECB6-453F-A370-5DD9A54696B1}.Release|x86.Build.0 = Release|Win32
+		{5CE2A7AC-EE3E-4DBC-9E9E-5ABEE50035F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CE2A7AC-EE3E-4DBC-9E9E-5ABEE50035F3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5CE2A7AC-EE3E-4DBC-9E9E-5ABEE50035F3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5CE2A7AC-EE3E-4DBC-9E9E-5ABEE50035F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CE2A7AC-EE3E-4DBC-9E9E-5ABEE50035F3}.Release|x64.ActiveCfg = Release|Any CPU
+		{5CE2A7AC-EE3E-4DBC-9E9E-5ABEE50035F3}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {104072DD-B8C7-4481-A03A-6D48EE3AF093}
+	EndGlobalSection
+EndGlobal
