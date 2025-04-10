@@ -12,16 +12,16 @@
 ## 环境配置
 ### Visual Studio和CUDA安装
 - 先安装VS2019/2022  
-- 后安装CUDA 11.6+（勾选*VS Integration*）  
+- 后安装CUDA 12.3+（勾选*VS Integration*）  
 
 ## 构建CUDA程序链接库（文件夹CudaDll）
 ```cpp
 // 头文件需添加导出声明
 extern "C" __declspec(dllexport) void functionName(...);
-```
+```2
 **步骤**：  
-1. 新建CUDA 11.6 Runtime工程 → 改为动态库  
-2. 勾选`CUDA 11.6(.targets,.props)`  
+1. 新建CUDA 12.3 Runtime工程 → 改为动态库  
+2. 勾选`CUDA 12.3(.targets,.props)`  
 3. 记录生成的`.../x64/Debug/xxx.lib`路径  
 
 ## 构建CUDA测试单元（后续源码文件用到）
