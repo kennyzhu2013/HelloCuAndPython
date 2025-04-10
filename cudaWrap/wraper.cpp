@@ -25,6 +25,8 @@ void addWithCudaWrapper(py::array_t<int> c, py::array_t<int> a, py::array_t<int>
     addWithCuda(ptr_c, ptr_a, ptr_b, size);
 }
 
+
+// pybind11绑定cpp的参考文档：https://pybind11.readthedocs.io/en/stable/basics.html
 PYBIND11_MODULE(addCuda, m) {
     m.def("addWithCuda", &addWithCudaWrapper, "A function that adds two arrays using CUDA",
         py::arg("c"), py::arg("a"), py::arg("b"), py::arg("size"));
@@ -34,3 +36,5 @@ PYBIND11_MODULE(addCuda, m) {
     m.attr("__version__") = "dev";
 #endif
 }
+
+// TODO: 另外一种CPython实现参考文档：https://learn.microsoft.com/zh-cn/visualstudio/python/working-with-c-cpp-python-in-visual-studio?view=vs-2022
