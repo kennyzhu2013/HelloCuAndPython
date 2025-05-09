@@ -1,0 +1,58 @@
+Package: vcpkg-cmake-config
+Version: 2024-05-23
+Architecture: x64-windows
+Multi-Arch: same
+Abi: a94f9b88d2318c5ac9bd9eac8ddf673bf2782b6582cdcaa3d2ac2945ac78e55e
+Status: install ok installed
+
+Package: vcpkg-cmake
+Version: 2024-04-23
+Architecture: x64-windows
+Multi-Arch: same
+Abi: d91adc502e63c3e805046f18168bf079f8aa2a016b8ee912de490299bff0f2ad
+Status: install ok installed
+
+Package: libevent
+Version: 2.1.12+20230128
+Port-Version: 1
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 4ea793c4a0a7250f4923a59d4b8fb79073cd6adb715b5da90a0720d00a6607ba
+Description: An event notification library
+Default-Features: thread
+Status: install ok installed
+
+Package: libevent
+Feature: thread
+Architecture: x64-windows
+Multi-Arch: same
+Description: Support for thread
+Status: install ok installed
+
+Package: vcpkg-cmake-get-vars
+Version: 2024-09-22
+Depends: vcpkg-cmake
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 33ea57a222cb43fde1a0e6221dff4cf71d22811bfd5b0ff1d1c325e36b7c1f9b
+Status: install ok installed
+
+Package: vcpkg-make
+Version: 2025-04-25
+Depends: vcpkg-cmake-get-vars
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 8730b3637bf2e22187e967c60617789a74f92f33abc9e09596d305440f4ac24a
+Status: install ok installed
+
+Package: jemalloc
+Version: 5.3.0
+Port-Version: 3
+Depends: vcpkg-make
+Architecture: x64-windows
+Multi-Arch: same
+Abi: f80d9132a0ef58eb4967a96f48cae43a89adf75c37a88d3221975688041ab5a4
+Description: jemalloc is a general purpose malloc(3) implementation that emphasizes fragmentation avoidance and scalable concurrency support
+Status: install ok installed
+

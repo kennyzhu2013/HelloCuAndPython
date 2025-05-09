@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1CF922E2-E3B0-4A6C-A56F-838A8F6D3296}</ProjectGuid>
+    <RootNamespace>CudaRuntimeLinux</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 12.3.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnableManifest>true</VcpkgEnableManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;WIN64;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CudaCompile>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;WIN64;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CudaCompile>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CudaCompile Include="kernel.cu" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="lang\CString.cpp" />
+    <ClCompile Include="lang\Exception.cpp" />
+    <ClCompile Include="lang\SafeAssert.cpp" />
+    <ClCompile Include="lang\ToAscii.cpp" />
+    <ClCompile Include="lang\UncaughtExceptions.cpp" />
+    <ClCompile Include="net\detail\SocketFileDescriptorMap.cpp" />
+    <ClCompile Include="portability\Builtins.cpp" />
+    <ClCompile Include="portability\Dirent.cpp" />
+    <ClCompile Include="portability\Fcntl.cpp" />
+    <ClCompile Include="portability\Filesystem.cpp" />
+    <ClCompile Include="portability\Libgen.cpp" />
+    <ClCompile Include="portability\Malloc.cpp" />
+    <ClCompile Include="portability\openat2.c" />
+    <ClCompile Include="portability\OpenSSL.cpp" />
+    <ClCompile Include="portability\PThread.cpp" />
+    <ClCompile Include="portability\Sched.cpp" />
+    <ClCompile Include="portability\Sockets.cpp" />
+    <ClCompile Include="portability\Stdio.cpp" />
+    <ClCompile Include="portability\Stdlib.cpp" />
+    <ClCompile Include="portability\String.cpp" />
+    <ClCompile Include="portability\SysFile.cpp" />
+    <ClCompile Include="portability\SysMembarrier.cpp" />
+    <ClCompile Include="portability\SysMman.cpp" />
+    <ClCompile Include="portability\SysResource.cpp" />
+    <ClCompile Include="portability\SysStat.cpp" />
+    <ClCompile Include="portability\SysTime.cpp" />
+    <ClCompile Include="portability\SysUio.cpp" />
+    <ClCompile Include="portability\test\UnistdTest.cpp" />
+    <ClCompile Include="portability\Time.cpp" />
+    <ClCompile Include="portability\Unistd.cpp" />
+    <ClCompile Include="yalm\codec.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ConstexprMath.h" />
+    <ClInclude Include="CPortability.h" />
+    <ClInclude Include="folly-config.h" />
+    <ClInclude Include="lang\Access.h" />
+    <ClInclude Include="lang\Align.h" />
+    <ClInclude Include="lang\Aligned.h" />
+    <ClInclude Include="lang\Assume.h" />
+    <ClInclude Include="lang\Badge.h" />
+    <ClInclude Include="lang\Bindings.h" />
+    <ClInclude Include="lang\Bits.h" />
+    <ClInclude Include="lang\BitsClass.h" />
+    <ClInclude Include="lang\Builtin.h" />
+    <ClInclude Include="lang\CArray.h" />
+    <ClInclude Include="lang\Cast.h" />
+    <ClInclude Include="lang\CheckedMath.h" />
+    <ClInclude Include="lang\CString.h" />
+    <ClInclude Include="lang\CustomizationPoint.h" />
+    <ClInclude Include="lang\Exception.h" />
+    <ClInclude Include="lang\Extern.h" />
+    <ClInclude Include="lang\Hint-inl.h" />
+    <ClInclude Include="lang\Hint.h" />
+    <ClInclude Include="lang\Keep.h" />
+    <ClInclude Include="lang\New.h" />
+    <ClInclude Include="lang\Ordering.h" />
+    <ClInclude Include="lang\Pretty.h" />
+    <ClInclude Include="lang\PropagateConst.h" />
+    <ClInclude Include="lang\RValueReferenceWrapper.h" />
+    <ClInclude Include="lang\SafeAssert.h" />
+    <ClInclude Include="lang\StaticConst.h" />
+    <ClInclude Include="lang\Thunk.h" />
+    <ClInclude Include="lang\ToAscii.h" />
+    <ClInclude Include="lang\TypeInfo.h" />
+    <ClInclude Include="lang\UncaughtExceptions.h" />
+    <ClInclude Include="Likely.h" />
+    <ClInclude Include="llama-mmap.h" />
+    <ClInclude Include="Memory.h" />
+    <ClInclude Include="net\detail\SocketFileDescriptorMap.h" />
+    <ClInclude Include="Portability.h" />
+    <ClInclude Include="portability\Asm.h" />
+    <ClInclude Include="portability\Atomic.h" />
+    <ClInclude Include="portability\Builtins.h" />
+    <ClInclude Include="portability\Config.h" />
+    <ClInclude Include="portability\Constexpr.h" />
+    <ClInclude Include="portability\Dirent.h" />
+    <ClInclude Include="portability\Event.h" />
+    <ClInclude Include="portability\Fcntl.h" />
+    <ClInclude Include="portability\Filesystem.h" />
+    <ClInclude Include="portability\FmtCompile.h" />
+    <ClInclude Include="portability\GFlags.h" />
+    <ClInclude Include="portability\GMock.h" />
+    <ClInclude Include="portability\GTest.h" />
+    <ClInclude Include="portability\GTestProd.h" />
+    <ClInclude Include="portability\IOVec.h" />
+    <ClInclude Include="portability\Libgen.h" />
+    <ClInclude Include="portability\Libunwind.h" />
+    <ClInclude Include="portability\Malloc.h" />
+    <ClInclude Include="portability\Math.h" />
+    <ClInclude Include="portability\Memory.h" />
+    <ClInclude Include="portability\openat2.h" />
+    <ClInclude Include="portability\OpenSSL.h" />
+    <ClInclude Include="portability\PThread.h" />
+    <ClInclude Include="portability\Sched.h" />
+    <ClInclude Include="portability\Sockets.h" />
+    <ClInclude Include="portability\SourceLocation.h" />
+    <ClInclude Include="portability\Stdio.h" />
+    <ClInclude Include="portability\Stdlib.h" />
+    <ClInclude Include="portability\String.h" />
+    <ClInclude Include="portability\SysFile.h" />
+    <ClInclude Include="portability\Syslog.h" />
+    <ClInclude Include="portability\SysMembarrier.h" />
+    <ClInclude Include="portability\SysMman.h" />
+    <ClInclude Include="portability\SysResource.h" />
+    <ClInclude Include="portability\SysStat.h" />
+    <ClInclude Include="portability\SysSyscall.h" />
+    <ClInclude Include="portability\SysTime.h" />
+    <ClInclude Include="portability\SysTypes.h" />
+    <ClInclude Include="portability\SysUio.h" />
+    <ClInclude Include="portability\Time.h" />
+    <ClInclude Include="portability\Unistd.h" />
+    <ClInclude Include="portability\Windows.h" />
+    <ClInclude Include="Traits.h" />
+    <ClInclude Include="Utility.h" />
+    <ClInclude Include="yalm\codec.h" />
+    <ClInclude Include="yalm\vendor\json.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lang\Bindings.md" />
+    <None Include="portability\README.md" />
+    <None Include="vcpkg-configuration.json" />
+    <None Include="vcpkg.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="readme.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 12.3.targets" />
+  </ImportGroup>
+</Project>

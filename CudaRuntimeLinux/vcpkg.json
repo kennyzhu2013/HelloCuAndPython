@@ -1,0 +1,14 @@
+{
+    "dependencies": [
+        {
+            "name": "libevent",
+            "default-features": true,
+            "features": []
+        },
+        {
+            "name": "jemalloc",
+            "default-features": true,
+            "features": []
+        }
+    ]
+}

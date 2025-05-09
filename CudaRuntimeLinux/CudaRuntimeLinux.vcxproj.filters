@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CudaCompile Include="kernel.cu" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="yalm">
+      <UniqueIdentifier>{06391cae-9b84-48b8-8e75-5022f679265c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="yalm\vendor">
+      <UniqueIdentifier>{a6da7c4f-080d-4483-8e6b-37fd7607548b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="portability">
+      <UniqueIdentifier>{5fcfddaa-d612-4204-a951-219892850b46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="portability\test">
+      <UniqueIdentifier>{49d39b04-a81e-45e5-b304-61042e9a9fec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="folly">
+      <UniqueIdentifier>{eafd5a19-751e-47f2-9b23-1078c3b9100f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TODO">
+      <UniqueIdentifier>{0c7bf79e-1dc2-452a-af9b-74bd8e3b33b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="folly\lang">
+      <UniqueIdentifier>{c07428b8-d924-443a-b81a-a14dff99aebc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="folly\net">
+      <UniqueIdentifier>{222dc30f-182e-4919-a5fc-9e923772a485}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="folly\net\detail">
+      <UniqueIdentifier>{cc2e7760-98fb-470e-b5a0-c97322f37256}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="folly\net\detail\test">
+      <UniqueIdentifier>{35f68284-4bf1-423e-bbf0-894a8bae6769}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="yalm\codec.cpp">
+      <Filter>yalm</Filter>
+    </ClCompile>
+    <ClCompile Include="portability\Builtins.cpp">
+      <Filter>portability</Filter>
+    </ClCompile>
+    <ClCompile Include="portability\Dirent.cpp">
+      <Filter>portability</Filter>
+    </ClCompile>
+    <ClCompile Include="portability\Fcntl.cpp">
+      <Filter>portability</Filter>
+    </ClCompile>
+    <ClCompile Include="portability\Filesystem.cpp">
+      <Filter>portability</Filter>
+    </ClCompile>
+    <ClCompile Include="portability\Libgen.cpp">
+      <Filter>portability</Filter>
+    </ClCompile>
+    <ClCompile Include="portability\Malloc.cpp">
+      <Filter>portability</Filter>
+    </ClCompile>
+    <ClCompile Include="portability\openat2.c">
+      <Filter>portability</Filter>
+    </ClCompile>
+    <ClCompile Include="portability\OpenSSL.cpp">
+      <Filter>portability</Filter>
+    </ClCompile>
+    <ClCompile Include="portability\PThread.cpp">
+      <Filter>portability</Filter>
+    </ClCompile>
+    <ClCompile Include="portability\Sched.cpp">
+      <Filter>portability</Filter>
+    </ClCompile>
+    <ClCompile Include="portability\Sockets.cpp">
+      <Filter>portability</Filter>
+    </ClCompile>
+    <ClCompile Include="portability\Stdio.cpp">
+      <Filter>portability</Filter>
+    </ClCompile>
+    <ClCompile Include="portability\Stdlib.cpp">
+      <Filter>portability</Filter>
+    </ClCompile>
+    <ClCompile Include="portability\String.cpp">
+      <Filter>portability</Filter>
+    </ClCompile>
+    <ClCompile Include="portability\SysFile.cpp">
+      <Filter>portability</Filter>
+    </ClCompile>
+    <ClCompile Include="portability\SysMembarrier.cpp">
+      <Filter>portability</Filter>
+    </ClCompile>
+    <ClCompile Include="portability\SysMman.cpp">
+      <Filter>portability</Filter>
+    </ClCompile>
+    <ClCompile Include="portability\SysResource.cpp">
+      <Filter>portability</Filter>
+    </ClCompile>
+    <ClCompile Include="portability\SysStat.cpp">
+      <Filter>portability</Filter>
+    </ClCompile>
+    <ClCompile Include="portability\SysTime.cpp">
+      <Filter>portability</Filter>
+    </ClCompile>
+    <ClCompile Include="portability\SysUio.cpp">
+      <Filter>portability</Filter>
+    </ClCompile>
+    <ClCompile Include="portability\Time.cpp">
+      <Filter>portability</Filter>
+    </ClCompile>
+    <ClCompile Include="portability\Unistd.cpp">
+      <Filter>portability</Filter>
+    </ClCompile>
+    <ClCompile Include="portability\test\UnistdTest.cpp">
+      <Filter>portability\test</Filter>
+    </ClCompile>
+    <ClCompile Include="net\detail\SocketFileDescriptorMap.cpp">
+      <Filter>folly\net\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="lang\CString.cpp">
+      <Filter>folly\lang</Filter>
+    </ClCompile>
+    <ClCompile Include="lang\Exception.cpp">
+      <Filter>folly\lang</Filter>
+    </ClCompile>
+    <ClCompile Include="lang\SafeAssert.cpp">
+      <Filter>folly\lang</Filter>
+    </ClCompile>
+    <ClCompile Include="lang\ToAscii.cpp">
+      <Filter>folly\lang</Filter>
+    </ClCompile>
+    <ClCompile Include="lang\UncaughtExceptions.cpp">
+      <Filter>folly\lang</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="yalm\codec.h">
+      <Filter>yalm</Filter>
+    </ClInclude>
+    <ClInclude Include="yalm\vendor\json.hpp">
+      <Filter>yalm\vendor</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\Asm.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\Atomic.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\Builtins.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\Config.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\Constexpr.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\Dirent.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\Event.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\Fcntl.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\Filesystem.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\FmtCompile.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\GFlags.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\GMock.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\GTest.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\GTestProd.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\IOVec.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\Libgen.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\Libunwind.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\Malloc.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\Math.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\Memory.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\openat2.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\OpenSSL.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\PThread.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\Sched.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\Sockets.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\SourceLocation.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\Stdio.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\Stdlib.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\String.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\SysFile.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\Syslog.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\SysMembarrier.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\SysMman.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\SysResource.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\SysStat.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\SysSyscall.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\SysTime.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\SysTypes.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\SysUio.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\Time.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\Unistd.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="portability\Windows.h">
+      <Filter>portability</Filter>
+    </ClInclude>
+    <ClInclude Include="net\detail\SocketFileDescriptorMap.h">
+      <Filter>folly\net\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="Portability.h">
+      <Filter>folly</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory.h">
+      <Filter>folly</Filter>
+    </ClInclude>
+    <ClInclude Include="folly-config.h">
+      <Filter>folly</Filter>
+    </ClInclude>
+    <ClInclude Include="CPortability.h">
+      <Filter>folly</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstexprMath.h">
+      <Filter>folly</Filter>
+    </ClInclude>
+    <ClInclude Include="Likely.h">
+      <Filter>folly</Filter>
+    </ClInclude>
+    <ClInclude Include="Traits.h">
+      <Filter>folly</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility.h">
+      <Filter>folly</Filter>
+    </ClInclude>
+    <ClInclude Include="llama-mmap.h">
+      <Filter>TODO</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\Access.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\Align.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\Aligned.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\Assume.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\Badge.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\Bindings.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\Bits.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\BitsClass.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\Builtin.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\CArray.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\Cast.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\CheckedMath.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\CString.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\CustomizationPoint.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\Exception.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\Extern.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\Hint.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\Hint-inl.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\Keep.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\New.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\Ordering.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\Pretty.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\PropagateConst.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\RValueReferenceWrapper.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\SafeAssert.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\StaticConst.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\Thunk.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\ToAscii.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\TypeInfo.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+    <ClInclude Include="lang\UncaughtExceptions.h">
+      <Filter>folly\lang</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="portability\README.md">
+      <Filter>portability</Filter>
+    </None>
+    <None Include="vcpkg.json" />
+    <None Include="vcpkg-configuration.json" />
+    <None Include="lang\Bindings.md">
+      <Filter>folly\lang</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="readme.txt">
+      <Filter>folly</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
