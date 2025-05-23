@@ -1,7 +1,7 @@
-﻿
-#include "cuda_runtime.h"
-#include "device_launch_parameters.h"
+﻿#include <cuda_runtime.h>
+#include <device_launch_parameters.h>
 #include "kernel.cuh"
+
 #include <stdio.h>
 
 // extern "C" __declspec(dllexport) cudaError_t addWithCuda(int *c, const int *a, const int *b, unsigned int size);
@@ -10,6 +10,12 @@ __global__ void addKernel(int *c, const int *a, const int *b)
 {
     int i = threadIdx.x;
     c[i] = a[i] + b[i];
+}
+
+__global__ void myKernel(float* data) {
+    int tid = threadIdx.x;
+    data[tid] += 1.0f;
+
 }
 
 int main()

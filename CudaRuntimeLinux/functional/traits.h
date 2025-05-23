@@ -16,7 +16,7 @@
 
 #pragma once
 
-#include <folly/Traits.h>
+#include <Traits.h>
 
 namespace folly {
 

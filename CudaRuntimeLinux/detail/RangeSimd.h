@@ -18,7 +18,7 @@
 
 #include <cstddef>
 
-#include <folly/detail/RangeCommon.h>
+#include <detail/RangeCommon.h>
 
 namespace folly {
 namespace detail {

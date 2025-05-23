@@ -343,6 +343,9 @@
 #define FOLLY_CLANG_DISABLE_WARNING(warningName)
 #define FOLLY_MSVC_DISABLE_WARNING(warningNumber) \
   __pragma(warning(disable : warningNumber))
+
+// enable  the GCC warnings unavailably，MSVC 不支持 GUN的某些特殊waning
+#define FOLLY_GNU_ENABLE_WARNING(warningName)
 #else
 #define FOLLY_PUSH_WARNING
 #define FOLLY_POP_WARNING

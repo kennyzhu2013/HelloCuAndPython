@@ -18,8 +18,8 @@
 
 #include <ostream>
 
-#include <folly/net/detail/SocketFileDescriptorMap.h>
-#include <folly/portability/Windows.h>
+#include <net/detail/SocketFileDescriptorMap.h>
+#include <portability/Windows.h>
 
 namespace folly {
 /**

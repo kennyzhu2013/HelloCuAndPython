@@ -18,7 +18,7 @@
 
 #include <memory>
 
-#include <folly/net/NetOps.h>
+#include <net/NetOps.h>
 
 namespace folly {
 namespace netops {

@@ -56,3 +56,65 @@ Abi: f80d9132a0ef58eb4967a96f48cae43a89adf75c37a88d3221975688041ab5a4
 Description: jemalloc is a general purpose malloc(3) implementation that emphasizes fragmentation avoidance and scalable concurrency support
 Status: install ok installed
 
+Package: vcpkg-boost
+Version: 2025-03-29
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 029f0c18ed9c7dba173941f39542fe4830b986337e2c00cb85bb4773ec133af3
+Status: install ok installed
+
+Package: boost-uninstall
+Version: 1.88.0
+Architecture: x64-windows
+Multi-Arch: same
+Abi: e703b022c1569cdb27898b658d96e110000fd32a85a1fd1e31044d6ea4a0868f
+Description: Internal vcpkg port used to uninstall Boost
+Status: install ok installed
+
+Package: boost-cmake
+Version: 1.88.0
+Depends: boost-uninstall, vcpkg-boost
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 5716f1797942bac4d6519297656201df2b753a6d233ceed146b156e7b3874c62
+Description: Boost cmake module
+Status: install ok installed
+
+Package: boost-headers
+Version: 1.88.0
+Depends: boost-cmake
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 7c5d9bc30ff775b29bf9a1db95afbd0bbacd3d5948db65d0427c9dc1d11ee580
+Description: Boost headers module
+Status: install ok installed
+
+Package: boost-config
+Version: 1.88.0
+Depends: boost-cmake, boost-headers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 931c1991767c7f1fa02cfcaea6d6ddd6c8371bf734633b8786f618137e905e42
+Description: Boost config module
+Status: install ok installed
+
+Package: boost-preprocessor
+Version: 1.88.0
+Depends: boost-cmake, boost-config, boost-headers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 65125cd80001c5f36ceba4fe0d7ed7b9b960684b3cf9ae8f294ef52b3b37fc98
+Description: Boost preprocessor module
+Status: install ok installed
+
+Package: fmt
+Version: 11.0.2
+Port-Version: 1
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: b70642853d91d961f699e0859030be88d205e41333a304b567dad59070f20bf3
+Description: {fmt} is an open-source formatting library providing a fast and safe alternative to C stdio and C++ iostreams.
+Status: purge ok not-installed
+

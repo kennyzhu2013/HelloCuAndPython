@@ -24,7 +24,7 @@
 #include <limits>
 #include <type_traits>
 
-#include <glog/logging.h>
+// #include <glog/logging.h>
 
 #include <Portability.h>
 #include <Range.h>

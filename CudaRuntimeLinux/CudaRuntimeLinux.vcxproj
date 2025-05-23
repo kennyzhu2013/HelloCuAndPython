@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
@@ -45,6 +45,10 @@
   </PropertyGroup>
   <PropertyGroup Label="Vcpkg">
     <VcpkgEnableManifest>true</VcpkgEnableManifest>
+    <VcpkgXUseBuiltInApplocalDeps>false</VcpkgXUseBuiltInApplocalDeps>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <VcpkgInstalledDir>D:\AI\mycuda\CudaRuntimeLinux\vcpkg_installed</VcpkgInstalledDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -52,12 +56,16 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;WIN64;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>cuda.lib;cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;Ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\AI\mycuda\CudaRuntimeLinux\vcpkg_installed\x64-windows\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <CudaCompile>
       <TargetMachinePlatform>64</TargetMachinePlatform>
@@ -84,22 +92,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <CudaCompile Include="kernel.cu" />
+    <CudaCompile Include="yalm\infer.cu" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="detail\FileUtilDetail.cpp" />
+    <ClCompile Include="hash\SpookyHashV2.cpp" />
     <ClCompile Include="lang\CString.cpp" />
     <ClCompile Include="lang\Exception.cpp" />
     <ClCompile Include="lang\SafeAssert.cpp" />
     <ClCompile Include="lang\ToAscii.cpp" />
     <ClCompile Include="lang\UncaughtExceptions.cpp" />
+    <ClCompile Include="memory\detail\MallocImpl.cpp" />
     <ClCompile Include="net\detail\SocketFileDescriptorMap.cpp" />
+    <ClCompile Include="net\NetOps.cpp" />
+    <ClCompile Include="net\NetOpsDispatcher.cpp" />
     <ClCompile Include="portability\Builtins.cpp" />
     <ClCompile Include="portability\Dirent.cpp" />
     <ClCompile Include="portability\Fcntl.cpp" />
     <ClCompile Include="portability\Filesystem.cpp" />
     <ClCompile Include="portability\Libgen.cpp" />
     <ClCompile Include="portability\Malloc.cpp" />
-    <ClCompile Include="portability\openat2.c" />
-    <ClCompile Include="portability\OpenSSL.cpp" />
     <ClCompile Include="portability\PThread.cpp" />
     <ClCompile Include="portability\Sched.cpp" />
     <ClCompile Include="portability\Sockets.cpp" />
@@ -113,15 +125,30 @@
     <ClCompile Include="portability\SysStat.cpp" />
     <ClCompile Include="portability\SysTime.cpp" />
     <ClCompile Include="portability\SysUio.cpp" />
-    <ClCompile Include="portability\test\UnistdTest.cpp" />
     <ClCompile Include="portability\Time.cpp" />
     <ClCompile Include="portability\Unistd.cpp" />
+    <ClCompile Include="ScopeGuard.cpp" />
     <ClCompile Include="yalm\codec.cpp" />
+    <ClCompile Include="yalm\infer.cpp" />
+    <ClCompile Include="yalm\model.cpp" />
+    <ClCompile Include="yalm\sampler.cpp" />
+    <ClCompile Include="yalm\test.cpp" />
+    <ClCompile Include="yalm\time.cpp" />
+    <ClCompile Include="yalm\tokenizer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConstexprMath.h" />
     <ClInclude Include="CPortability.h" />
+    <ClInclude Include="CppAttributes.h" />
+    <ClInclude Include="CpuId.h" />
+    <ClInclude Include="detail\FileUtilDetail.h" />
     <ClInclude Include="folly-config.h" />
+    <ClInclude Include="functional\ApplyTuple.h" />
+    <ClInclude Include="functional\Invoke.h" />
+    <ClInclude Include="functional\Partial.h" />
+    <ClInclude Include="functional\protocol.h" />
+    <ClInclude Include="functional\traits.h" />
+    <ClInclude Include="hash\SpookyHashV2.h" />
     <ClInclude Include="lang\Access.h" />
     <ClInclude Include="lang\Align.h" />
     <ClInclude Include="lang\Aligned.h" />
@@ -145,7 +172,6 @@
     <ClInclude Include="lang\Ordering.h" />
     <ClInclude Include="lang\Pretty.h" />
     <ClInclude Include="lang\PropagateConst.h" />
-    <ClInclude Include="lang\RValueReferenceWrapper.h" />
     <ClInclude Include="lang\SafeAssert.h" />
     <ClInclude Include="lang\StaticConst.h" />
     <ClInclude Include="lang\Thunk.h" />
@@ -155,7 +181,13 @@
     <ClInclude Include="Likely.h" />
     <ClInclude Include="llama-mmap.h" />
     <ClInclude Include="Memory.h" />
+    <ClInclude Include="memory\detail\MallocImpl.h" />
+    <ClInclude Include="memory\Malloc.h" />
     <ClInclude Include="net\detail\SocketFileDescriptorMap.h" />
+    <ClInclude Include="net\NetOps.h" />
+    <ClInclude Include="net\NetOpsDispatcher.h" />
+    <ClInclude Include="net\NetworkSocket.h" />
+    <ClInclude Include="net\TcpInfoTypes.h" />
     <ClInclude Include="Portability.h" />
     <ClInclude Include="portability\Asm.h" />
     <ClInclude Include="portability\Atomic.h" />
@@ -169,7 +201,6 @@
     <ClInclude Include="portability\FmtCompile.h" />
     <ClInclude Include="portability\GFlags.h" />
     <ClInclude Include="portability\GMock.h" />
-    <ClInclude Include="portability\GTest.h" />
     <ClInclude Include="portability\GTestProd.h" />
     <ClInclude Include="portability\IOVec.h" />
     <ClInclude Include="portability\Libgen.h" />
@@ -177,8 +208,6 @@
     <ClInclude Include="portability\Malloc.h" />
     <ClInclude Include="portability\Math.h" />
     <ClInclude Include="portability\Memory.h" />
-    <ClInclude Include="portability\openat2.h" />
-    <ClInclude Include="portability\OpenSSL.h" />
     <ClInclude Include="portability\PThread.h" />
     <ClInclude Include="portability\Sched.h" />
     <ClInclude Include="portability\Sockets.h" />
@@ -199,18 +228,27 @@
     <ClInclude Include="portability\Time.h" />
     <ClInclude Include="portability\Unistd.h" />
     <ClInclude Include="portability\Windows.h" />
+    <ClInclude Include="Preprocessor.h" />
+    <ClInclude Include="Range.h" />
+    <ClInclude Include="ScopeGuard.h" />
     <ClInclude Include="Traits.h" />
     <ClInclude Include="Utility.h" />
     <ClInclude Include="yalm\codec.h" />
+    <ClInclude Include="yalm\model.h" />
+    <ClInclude Include="yalm\sampler.h" />
+    <ClInclude Include="yalm\time.h" />
+    <ClInclude Include="yalm\tokenizer.h" />
     <ClInclude Include="yalm\vendor\json.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="cpp.hint" />
     <None Include="lang\Bindings.md" />
     <None Include="portability\README.md" />
     <None Include="vcpkg-configuration.json" />
     <None Include="vcpkg.json" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="detail\readme.txt" />
     <Text Include="readme.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

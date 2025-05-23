@@ -99,6 +99,7 @@ int inet_aton(const char* cp, struct in_addr* inp) {
   return netops::inet_aton(cp, inp);
 }
 
+// 只有ipv6需要用到转换
 const char* inet_ntop(int af, const void* src, char* dst, socklen_t size) {
   return ::inet_ntop(af, (char*)src, dst, size_t(size));
 }

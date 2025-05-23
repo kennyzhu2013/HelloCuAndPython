@@ -25,12 +25,12 @@
 #include <boost/preprocessor/logical/not.hpp>
 #include <boost/preprocessor/tuple/to_list.hpp>
 
-#include <folly/CppAttributes.h>
-#include <folly/Portability.h>
-#include <folly/Preprocessor.h>
-#include <folly/Traits.h>
-#include <folly/Utility.h>
-#include <folly/lang/CustomizationPoint.h>
+#include <CppAttributes.h>
+#include <Portability.h>
+#include <Preprocessor.h>
+#include <Traits.h>
+#include <Utility.h>
+#include <lang/CustomizationPoint.h>
 
 #define FOLLY_DETAIL_FORWARD_REF(a) static_cast<decltype(a)&&>(a)
 

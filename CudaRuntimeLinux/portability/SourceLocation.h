@@ -18,7 +18,8 @@
 
 #include <version>
 
-#include <fmt/format.h>
+// #include <fmt/format.h>
+#include <format>
 
 #if __has_include(<source_location>) && defined __cpp_lib_source_location
 #include <source_location> // @manual
@@ -26,6 +27,7 @@ namespace folly {
 using source_location = ::std::source_location;
 #elif __has_include(<experimental/source_location>)
 #include <experimental/source_location>
+
 namespace folly {
 using source_location = ::std::experimental::source_location;
 #else
@@ -40,7 +42,7 @@ struct source_location {
 #endif
 
 inline auto sourceLocationToString(const source_location& location) {
-  return fmt::format(
+  return std::format(
       "{}:{} [{}]",
       location.file_name(),
       location.line(),

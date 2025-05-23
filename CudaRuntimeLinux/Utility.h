@@ -298,8 +298,12 @@ struct literal_string {
 inline namespace literals {
 inline namespace string_literals {
 
-#if FOLLY_CPLUSPLUS >= 202002 && !defined(__NVCC__)
+// 这个预处理指令检查编译器是否支持 C++20，并且不是 NVIDIA 的 CUDA 编译器（__NVCC__）。
+#if FOLLY_CPLUSPLUS >= 202002 && !defined(__NVCC__) && 0  // 暂时取消这一特性
 template <literal_string Str>
+// decltype(Str)这里使用 decltype 来推导返回类型，意图是返回与 Str 相同的类型
+// 这是一个用户定义的字面量运算符，通常用于处理字符串字面量。
+// 字面量（Literal）是编程语言中的一个基本概念，指的是在代码中直接表示的固定值
 FOLLY_CONSTEVAL decltype(Str) operator""_lit() noexcept {
   return Str;
 }

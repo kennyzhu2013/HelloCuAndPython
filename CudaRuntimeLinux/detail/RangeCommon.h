@@ -20,7 +20,7 @@
 #include <cassert>
 #include <string>
 
-#include <folly/Likely.h>
+#include <Likely.h>
 
 namespace folly {
 

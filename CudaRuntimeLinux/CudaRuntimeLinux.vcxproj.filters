@@ -2,6 +2,9 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <CudaCompile Include="kernel.cu" />
+    <CudaCompile Include="yalm\infer.cu">
+      <Filter>yalm</Filter>
+    </CudaCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="yalm">
@@ -34,6 +37,18 @@
     <Filter Include="folly\net\detail\test">
       <UniqueIdentifier>{35f68284-4bf1-423e-bbf0-894a8bae6769}</UniqueIdentifier>
     </Filter>
+    <Filter Include="folly\memory">
+      <UniqueIdentifier>{d789bac6-ccde-4585-85e8-c1bb92e9d585}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="folly\memory\detail">
+      <UniqueIdentifier>{ce350637-1edc-45cf-a385-b2206cc1d2d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="folly\functional">
+      <UniqueIdentifier>{7d823d48-d19f-440e-84cd-6368904492c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="folly\hash">
+      <UniqueIdentifier>{ce365b94-60a9-4116-839a-542f63fbcb44}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="yalm\codec.cpp">
@@ -55,12 +70,6 @@
       <Filter>portability</Filter>
     </ClCompile>
     <ClCompile Include="portability\Malloc.cpp">
-      <Filter>portability</Filter>
-    </ClCompile>
-    <ClCompile Include="portability\openat2.c">
-      <Filter>portability</Filter>
-    </ClCompile>
-    <ClCompile Include="portability\OpenSSL.cpp">
       <Filter>portability</Filter>
     </ClCompile>
     <ClCompile Include="portability\PThread.cpp">
@@ -108,9 +117,6 @@
     <ClCompile Include="portability\Unistd.cpp">
       <Filter>portability</Filter>
     </ClCompile>
-    <ClCompile Include="portability\test\UnistdTest.cpp">
-      <Filter>portability\test</Filter>
-    </ClCompile>
     <ClCompile Include="net\detail\SocketFileDescriptorMap.cpp">
       <Filter>folly\net\detail</Filter>
     </ClCompile>
@@ -128,6 +134,42 @@
     </ClCompile>
     <ClCompile Include="lang\UncaughtExceptions.cpp">
       <Filter>folly\lang</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\detail\MallocImpl.cpp">
+      <Filter>folly\memory\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="ScopeGuard.cpp">
+      <Filter>folly</Filter>
+    </ClCompile>
+    <ClCompile Include="detail\FileUtilDetail.cpp">
+      <Filter>folly</Filter>
+    </ClCompile>
+    <ClCompile Include="hash\SpookyHashV2.cpp">
+      <Filter>folly\hash</Filter>
+    </ClCompile>
+    <ClCompile Include="net\NetOps.cpp">
+      <Filter>folly\net</Filter>
+    </ClCompile>
+    <ClCompile Include="net\NetOpsDispatcher.cpp">
+      <Filter>folly\net</Filter>
+    </ClCompile>
+    <ClCompile Include="yalm\time.cpp">
+      <Filter>yalm</Filter>
+    </ClCompile>
+    <ClCompile Include="yalm\model.cpp">
+      <Filter>yalm</Filter>
+    </ClCompile>
+    <ClCompile Include="yalm\tokenizer.cpp">
+      <Filter>yalm</Filter>
+    </ClCompile>
+    <ClCompile Include="yalm\test.cpp">
+      <Filter>yalm</Filter>
+    </ClCompile>
+    <ClCompile Include="yalm\infer.cpp">
+      <Filter>yalm</Filter>
+    </ClCompile>
+    <ClCompile Include="yalm\sampler.cpp">
+      <Filter>yalm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -173,9 +215,6 @@
     <ClInclude Include="portability\GMock.h">
       <Filter>portability</Filter>
     </ClInclude>
-    <ClInclude Include="portability\GTest.h">
-      <Filter>portability</Filter>
-    </ClInclude>
     <ClInclude Include="portability\GTestProd.h">
       <Filter>portability</Filter>
     </ClInclude>
@@ -195,12 +234,6 @@
       <Filter>portability</Filter>
     </ClInclude>
     <ClInclude Include="portability\Memory.h">
-      <Filter>portability</Filter>
-    </ClInclude>
-    <ClInclude Include="portability\openat2.h">
-      <Filter>portability</Filter>
-    </ClInclude>
-    <ClInclude Include="portability\OpenSSL.h">
       <Filter>portability</Filter>
     </ClInclude>
     <ClInclude Include="portability\PThread.h">
@@ -362,9 +395,6 @@
     <ClInclude Include="lang\PropagateConst.h">
       <Filter>folly\lang</Filter>
     </ClInclude>
-    <ClInclude Include="lang\RValueReferenceWrapper.h">
-      <Filter>folly\lang</Filter>
-    </ClInclude>
     <ClInclude Include="lang\SafeAssert.h">
       <Filter>folly\lang</Filter>
     </ClInclude>
@@ -383,6 +413,72 @@
     <ClInclude Include="lang\UncaughtExceptions.h">
       <Filter>folly\lang</Filter>
     </ClInclude>
+    <ClInclude Include="memory\Malloc.h">
+      <Filter>folly\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\detail\MallocImpl.h">
+      <Filter>folly\memory\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="functional\ApplyTuple.h">
+      <Filter>folly\functional</Filter>
+    </ClInclude>
+    <ClInclude Include="functional\Invoke.h">
+      <Filter>folly\functional</Filter>
+    </ClInclude>
+    <ClInclude Include="functional\Partial.h">
+      <Filter>folly\functional</Filter>
+    </ClInclude>
+    <ClInclude Include="functional\protocol.h">
+      <Filter>folly\functional</Filter>
+    </ClInclude>
+    <ClInclude Include="functional\traits.h">
+      <Filter>folly\functional</Filter>
+    </ClInclude>
+    <ClInclude Include="ScopeGuard.h">
+      <Filter>folly</Filter>
+    </ClInclude>
+    <ClInclude Include="Preprocessor.h">
+      <Filter>folly</Filter>
+    </ClInclude>
+    <ClInclude Include="detail\FileUtilDetail.h">
+      <Filter>folly</Filter>
+    </ClInclude>
+    <ClInclude Include="CppAttributes.h">
+      <Filter>folly</Filter>
+    </ClInclude>
+    <ClInclude Include="Range.h">
+      <Filter>folly</Filter>
+    </ClInclude>
+    <ClInclude Include="CpuId.h">
+      <Filter>folly</Filter>
+    </ClInclude>
+    <ClInclude Include="hash\SpookyHashV2.h">
+      <Filter>folly\hash</Filter>
+    </ClInclude>
+    <ClInclude Include="net\NetOps.h">
+      <Filter>folly\net</Filter>
+    </ClInclude>
+    <ClInclude Include="net\NetOpsDispatcher.h">
+      <Filter>folly\net</Filter>
+    </ClInclude>
+    <ClInclude Include="net\NetworkSocket.h">
+      <Filter>folly\net</Filter>
+    </ClInclude>
+    <ClInclude Include="net\TcpInfoTypes.h">
+      <Filter>folly\net</Filter>
+    </ClInclude>
+    <ClInclude Include="yalm\model.h">
+      <Filter>yalm</Filter>
+    </ClInclude>
+    <ClInclude Include="yalm\time.h">
+      <Filter>yalm</Filter>
+    </ClInclude>
+    <ClInclude Include="yalm\tokenizer.h">
+      <Filter>yalm</Filter>
+    </ClInclude>
+    <ClInclude Include="yalm\sampler.h">
+      <Filter>yalm</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="portability\README.md">
@@ -393,10 +489,12 @@
     <None Include="lang\Bindings.md">
       <Filter>folly\lang</Filter>
     </None>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="readme.txt">
       <Filter>folly</Filter>
     </Text>
+    <Text Include="detail\readme.txt" />
   </ItemGroup>
 </Project>

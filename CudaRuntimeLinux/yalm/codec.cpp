@@ -9,6 +9,7 @@
 // #include <unistd.h>
 #include "../portability/SysMman.h"
 #include "../portability/Unistd.h"
+#include "../portability/Fcntl.h"
 
 std::string dtype_to_string(DType dtype) {
     switch (dtype) {
@@ -109,25 +110,27 @@ int Tensor::from_json(const std::string& name, const json& val, void* bytes_ptr,
     return 0;
 }
 
+using namespace folly;
+
 // todo: 跨平台改用boost库比较好
 int YALMData::from_file(const std::string& filename) {
     std::cout << "loading data from file: " << filename << std::endl;
 
-    int fd = open(filename.c_str(), O_RDONLY);
+    int fd = fileops::open(filename.c_str(), O_RDONLY);
     if (fd == -1) {
         return -1;
     }
 
     struct stat st;
     if (fstat(fd, &st) != 0) {
-        close(fd);
+        fileops::close(fd);
         return -1;
     }
 
     size = st.st_size;
     data = mmap(NULL, size, PROT_READ | PROT_WRITE, MAP_PRIVATE, fd, 0);
     if (data == MAP_FAILED) {
-        close(fd);
+        fileops::close(fd);
         return -1;
     }
 
@@ -136,7 +139,7 @@ int YALMData::from_file(const std::string& filename) {
     posix_fadvise(fd, 0, size, POSIX_FADV_SEQUENTIAL);
 #endif
 
-    close(fd); // fd can be closed after mmap returns without invalidating the mapping
+    fileops::close(fd); // fd can be closed after mmap returns without invalidating the mapping
 
     // Parse the metadata JSON and the tensors
     if (size < sizeof(uint64_t)) {

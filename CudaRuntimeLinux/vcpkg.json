@@ -9,6 +9,11 @@
             "name": "jemalloc",
             "default-features": true,
             "features": []
+        },
+        {
+            "name": "boost-preprocessor",
+            "default-features": true,
+            "features": []
         }
     ]
 }

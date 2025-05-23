@@ -13,6 +13,7 @@ __global__ void addKernel(int *c, const int *a, const int *b)
 }
 
 // linux下的cpp教程：https://learn.microsoft.com/zh-cn/cpp/build/walkthrough-header-units?view=msvc-170
+// 此处代码保留暂时不删除，等所有的都写完后再注释掉.
 int main()
 {
     const int arraySize = 5;

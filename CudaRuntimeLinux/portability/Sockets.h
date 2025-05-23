@@ -46,7 +46,7 @@ int connect(int s, const struct sockaddr* name, socklen_t namelen);
 int getpeername(int s, struct sockaddr* name, socklen_t* namelen);
 int getsockname(int s, struct sockaddr* name, socklen_t* namelen);
 int getsockopt(int s, int level, int optname, void* optval, socklen_t* optlen);
-const char* inet_ntop(int af, const void* src, char* dst, socklen_t size);
+const char* inet_ntop(int af, const void* src, char* dst, socklen_t size);  // 只有ipv6用到
 int listen(int s, int backlog);
 int poll(struct pollfd fds[], nfds_t nfds, int timeout);
 ssize_t recv(int s, void* buf, size_t len, int flags);

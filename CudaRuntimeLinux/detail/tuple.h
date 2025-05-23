@@ -16,8 +16,8 @@
 
 #pragma once
 
-#include <folly/CppAttributes.h>
-#include <folly/Traits.h>
+#include <CppAttributes.h>
+#include <Traits.h>
 
 /// Any file constructing `lite_tuple` should contain this after `#include`s:
 ///   FOLLY_PUSH_WARNINGS
@@ -39,7 +39,7 @@
 /// FIXME: Remove when our warnings are fixed to be this way globally.
 #define FOLLY_DETAIL_LITE_TUPLE_ADJUST_WARNINGS \
   FOLLY_GNU_DISABLE_WARNING("-Wmissing-braces") \
-  FOLLY_GNU_ENABLE_WARNING("-Wmissing-field-initializers")
+  FOLLY_GNU_ENABLE_WARNING("-Wmissing-field-initializers")  // MSVC 不支持 -Wmissing-field-initializers 选项
 
 FOLLY_PUSH_WARNING
 FOLLY_DETAIL_LITE_TUPLE_ADJUST_WARNINGS
@@ -160,6 +160,15 @@ FOLLY_ALWAYS_INLINE constexpr decltype(auto) get(
   return static_cast<dst&&>(tup.entry_value);
 }
 
+// constexpr: 表示这个函数可以在编译时求值，允许在常量表达式中使用。
+// auto&&... a: 这是一个变长模板参数，表示函数可以接受任意数量的参数（包括零个参数）。auto&& 是一个完美转发引用，能够保持参数的值类别（左值或右值）。
+//noexcept : 表示这个函数不会抛出异常，这有助于优化和安全性。
+/* C++中的左右值概念：
+左值（Lvalue）: 表示可以取地址的对象，通常是变量。 如void process(int& x) {
+    std::cout << "Left value: " << x << std::endl;
+}
+右值（Rvalue）: 表示临时对象或不再需要的对象，通常是字面量或表达式的结果。如
+*/
 FOLLY_ALWAYS_INLINE constexpr auto forward_as_tuple(auto&&... a) noexcept {
   return tuple<decltype(a)&&...>{static_cast<decltype(a)>(a)...};
 }

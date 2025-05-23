@@ -18,10 +18,10 @@
 
 #include <type_traits>
 
-#include <folly/Portability.h>
-#include <folly/Traits.h>
-#include <folly/functional/Invoke.h>
-#include <folly/functional/traits.h>
+#include <Portability.h>
+#include <Traits.h>
+#include <functional/Invoke.h>
+#include <functional/traits.h>
 
 namespace folly {
 
