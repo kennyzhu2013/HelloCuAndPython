@@ -171,6 +171,12 @@
     <ClCompile Include="yalm\sampler.cpp">
       <Filter>yalm</Filter>
     </ClCompile>
+    <ClCompile Include="yalm\debug.cpp">
+      <Filter>yalm</Filter>
+    </ClCompile>
+    <ClCompile Include="yalm\main.cpp">
+      <Filter>yalm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="yalm\codec.h">
@@ -479,6 +485,9 @@
     <ClInclude Include="yalm\sampler.h">
       <Filter>yalm</Filter>
     </ClInclude>
+    <ClInclude Include="yalm\debug.h">
+      <Filter>yalm</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="portability\README.md">
@@ -490,11 +499,13 @@
       <Filter>folly\lang</Filter>
     </None>
     <None Include="cpp.hint" />
+    <None Include="convet.py" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="readme.txt">
       <Filter>folly</Filter>
     </Text>
     <Text Include="detail\readme.txt" />
+    <Text Include="yalm\readme.txt" />
   </ItemGroup>
 </Project>

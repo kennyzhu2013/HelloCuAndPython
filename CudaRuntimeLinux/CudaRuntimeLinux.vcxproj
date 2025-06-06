@@ -129,7 +129,9 @@
     <ClCompile Include="portability\Unistd.cpp" />
     <ClCompile Include="ScopeGuard.cpp" />
     <ClCompile Include="yalm\codec.cpp" />
+    <ClCompile Include="yalm\debug.cpp" />
     <ClCompile Include="yalm\infer.cpp" />
+    <ClCompile Include="yalm\main.cpp" />
     <ClCompile Include="yalm\model.cpp" />
     <ClCompile Include="yalm\sampler.cpp" />
     <ClCompile Include="yalm\test.cpp" />
@@ -234,6 +236,7 @@
     <ClInclude Include="Traits.h" />
     <ClInclude Include="Utility.h" />
     <ClInclude Include="yalm\codec.h" />
+    <ClInclude Include="yalm\debug.h" />
     <ClInclude Include="yalm\model.h" />
     <ClInclude Include="yalm\sampler.h" />
     <ClInclude Include="yalm\time.h" />
@@ -241,6 +244,7 @@
     <ClInclude Include="yalm\vendor\json.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="convet.py" />
     <None Include="cpp.hint" />
     <None Include="lang\Bindings.md" />
     <None Include="portability\README.md" />
@@ -250,6 +254,7 @@
   <ItemGroup>
     <Text Include="detail\readme.txt" />
     <Text Include="readme.txt" />
+    <Text Include="yalm\readme.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

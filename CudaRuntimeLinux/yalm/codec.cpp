@@ -127,6 +127,7 @@ int YALMData::from_file(const std::string& filename) {
         return -1;
     }
 
+    // TODO: 这一步mmap申请的内存不够了报错，abort（）。需要找个参数更小的模型
     size = st.st_size;
     data = mmap(NULL, size, PROT_READ | PROT_WRITE, MAP_PRIVATE, fd, 0);
     if (data == MAP_FAILED) {
@@ -160,6 +161,7 @@ int YALMData::from_file(const std::string& filename) {
     std::string json_str(json_ptr, json_size);
     json header = json::parse(json_str);
 
+    std::cout << "YALMData::from_file done: parsing json" << std::endl;
     for (auto& [key, val] : header.items()) {
         if (key == "__metadata__") {
             metadata = val;
